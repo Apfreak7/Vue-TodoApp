@@ -7,7 +7,7 @@
         ref="labelInput"
         type="text"
         autocomplete="off"
-        v-model.lazy.trim="newName"
+        v-model.lazy.trim="newLabel"
       />
     </div>
     <div class="btn-group">
@@ -42,6 +42,7 @@ export default {
   methods: {
     onSubmit() {
       if (this.newLabel && this.newLabel !== this.label) {
+        console.log("OnSubmit",this.newLabel && this.newLabel !== this.label);
         this.$emit("item-edited", this.newLabel);
       }
     },
